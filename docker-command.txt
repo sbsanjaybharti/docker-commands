@@ -1,0 +1,63 @@
+---------------------------
+docker bash command
+---------------------------
+docker-compose exec django /bin/bash
+
+----------------------------
+To solve network IPv4 address issue
+docker network prune
+
+----------------------------
+To delete image:
+docker rmi $(docker images -q)
+
+-------------------------------------------------------------------------------
+Kill the Bad request
+---------------------------
+docker rm $(docker ps -a -q)
+
+----------------------------
+To stop existing containers
+----------------------------
+docker stop $(docker ps -a -q)
+
+----------------------
+to run container
+----------------------
+docker-compose up
+docker-compose up --force-recreate`
+
+----------------------
+to build image
+----------------------
+docker-compose build
+
+----------------------
+Docker Build Commands
+-----------------------
+> $(aws ecr get-login --no-include-email --region ap-southeast-2)
+> docker build -t webapp:prerelease-0-7-0 .
+> docker tag webapp:prerelease-0-7-0 458741852781.dkr.ecr.ap-southeast-2.amazonaws.com/webapp:prerelease-0-7-0
+> docker push 458741852781.dkr.ecr.ap-southeast-2.amazonaws.com/webapp:prerelease-0-7-0
+
+-------------------------
+To delete readonly Folders
+--------------------------
+sudo rm -rf <directory name>
+
+---------------------------
+To change permissions of file/folder
+---------------------------
+sudo chmod -R o+rw <directory name/file name>
+
+
+----------------------------------
+To Know current Branch in terminal
+----------------------------------
+sudo apt install zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+
+
+sudo rm /var/lib/apt/lists/lock
+sudo apt-get update && sudo apt-get -y upgrade
